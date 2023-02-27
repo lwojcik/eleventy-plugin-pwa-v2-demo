@@ -1,0 +1,32 @@
+{
+	"name": "eleventy-plugin-pwa-v2",
+	"lang": "en-US",
+	"short_name": "11ty-plugin-pwa-v2",
+	"description": "eleventy-plugin-pwa-v2 demo site",
+	"start_url": "./",
+	"scope": "./",
+	"display": "standalone",
+	"theme_color": "#000000",
+	"background_color": "#000000",
+	"orientation": "any",
+	"icons": [
+		{
+			"src": "/icon-192.png",
+			"sizes": "192x192",
+			"type": "image/png",
+			"purpose": "any"
+		},
+		{
+			"src": "/icon-512.png",
+			"sizes": "512x512",
+			"type": "image/png",
+			"purpose": "any"
+		},
+		{
+			"src": "/favicon.svg",
+			"sizes": "48x48 72x72 96x96 128x128 150x150 256x256 512x512 1024x1024",
+			"type": "image/svg+xml",
+			"purpose": "any"
+		}
+	]
+}

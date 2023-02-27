@@ -7,6 +7,8 @@ const pluginBundle = require("@11ty/eleventy-plugin-bundle");
 const pluginNavigation = require("@11ty/eleventy-navigation");
 const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
 
+const pluginPWA = require("eleventy-plugin-pwa-v2");
+
 module.exports = function(eleventyConfig) {
 	// Copy the contents of the `public` folder to the output folder
 	// For example, `./public/css/` ends up in `_site/css/`
@@ -33,6 +35,9 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPlugin(pluginNavigation);
 	eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
 	eleventyConfig.addPlugin(pluginBundle);
+
+	// eleventy-plugin-pwa-v2
+	eleventyConfig.addPlugin(pluginPWA);
 
 	// Filters
 	eleventyConfig.addFilter("readableDate", (dateObj, format, zone) => {

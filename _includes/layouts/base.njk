@@ -30,6 +30,9 @@
 
 		{#- Render the CSS bundle using Inlined CSS (for the fastest site performance in production) #}
 		<style>{% getBundle "css" %}</style>
+
+		{#- Add manifest for PWA #}
+		<link rel="manifest" href="/manifest.json">
 	</head>
 	<body>
 		<a href="#skip" class="visually-hidden">Skip to main content</a>
