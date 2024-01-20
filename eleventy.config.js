@@ -37,7 +37,24 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPlugin(pluginBundle);
 
 	// eleventy-plugin-pwa-v2
-	eleventyConfig.addPlugin(pluginPWA);
+	eleventyConfig.addPlugin(pluginPWA, {
+    cacheId: "plugin-v2-demo",
+    runtimeCaching: [
+      {
+        urlPattern: /\/$/,
+        handler: "NetworkFirst",
+      },
+      {
+        urlPattern: /\.html$/,
+        handler: "NetworkFirst",
+      },
+      {
+        urlPattern:
+          /^.*\.(jpg|png|mp4|gif|webp|ico|svg|woff2|woff|eot|ttf|otf|ttc|json)$/,
+        handler: "StaleWhileRevalidate",
+      },
+    ],
+  });
 
 	// Filters
 	eleventyConfig.addFilter("readableDate", (dateObj, format, zone) => {
